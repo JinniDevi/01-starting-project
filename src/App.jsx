@@ -32,6 +32,7 @@ function App() {
           <menu>
             {CORE_CONCEPTS.map((item) => (
               <TabButton
+                key={item.title}
                 isSelected={selectedTopic === item.title}
                 onSelect={() => handleSelect(item.title)}
               >
@@ -39,7 +40,6 @@ function App() {
               </TabButton>
             ))}
           </menu>
-          {tabContent}
           {!selectedTopic && <p>Please select a topic.</p>}
           {selectedTopic && (
             <div id="tab-content">
